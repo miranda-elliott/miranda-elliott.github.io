@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Miranda Elliott | Assignment 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/673bbc70e7.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <section class="header">
+            <div id="assignment-header-img">
+                <a href="javascript:history.go(-1)"><img src="img/red-triangle.png"></a>
+            </div>
+            <div id="header-text">
+                <h1>Assignment 2</h1>
+                <h2>Parametric Modelling with Grasshopper</h2>
+            </div>
+        </section>
+
+        <section class="divider">
+            <img src="img/yellow-line.png">
+        </section>
+
+        <section class="assignment-body">
+            <div class="photo-grid">
+                <img src="img/a2/kit1.jpg" class="photo-grid-1">
+                <img src="img/a2/kit2.jpg" class="photo-grid-2">
+            </div>
+
+            <p>For this assignment, we needed to create another 30-piece laser cut press fit kit, this time via parametric modeling with Grasshopper. I decided to keep it simple and stick to one shape - a circle, with slots! Wooo! A screenshot of the Grasshoper definiton and resulting Rhino model is below. In Grasshopper, I configured the definition so that one can input: the width and height of each slot in mm, the number of slots, and the radius of the circle in mm. To solidify the object in Rhino, you bake it at the final 'Join Curves' step.</p>
+
+            <img src="img/a2/gh.jpg" class="center" style="width:100%;">
+
+            For my kit, I created a circle with a 21mm radius and six 3.5x7mm slots. The slots are 3.5mm wide to match the cardboard's width, which I measured with a caliper in Assignment 1. I used leftover cardboard from the same batch as Assignment 1, so I generally had much less trial and error this time around with measuring, fitting, and cutting.
+
+            <div class="photo-grid center">
+                <img src="img/a2/rhino1.jpg" class="photo-grid-1">
+                <img src="img/a2/rhino2.jpg" class="photo-grid-2">
+            </div>
+
+            <p>I then moved that shape into Illustrator in order to cut it with the laser at the 8. I exported it as an .ai file from Rhino, ensuring that it retained its 1mm per unit scale. I made a couple test cuts first to confirm that the pieces fit together as expected and that the scale had been converted properly (it had!! ayeeee). Then I duplicated the shape 30 times with a red 0.01pt stroke, per the requirements of the laser cutter at the 8.</p>
+
+            <img src="img/a2/print.jpg" class="center">
+
+            <p>I used the same laser cutter settings as I did in Assignment 1 - I set the material to Mat Board and thickness to 2.5mm, leading to a power of 33%, speed of 12%, PPI of 500, Z-Axis of 2.5mm, and Laser of Both (full transparency, I still don't know whether this is necessary to note or what it means). But it worked! The cuts were once again crispy n clean, and the shapes gave big nuclear waste area vibes.</p>
+
+
+            <video width="100%" controls>
+              <source src="img/a2/laser.mp4" type="video/mp4">
+            </video>
+
+            <p>The final kit contains 30 pieces of spooky circle. They can become a mars rover, a radar tower, whatever you like. Go nuts!</p>
+
+
+            <div class="photo-grid">
+                <img src="img/a2/lab_process1.jpg" class="photo-grid-1">
+                <img src="img/a2/lab_process2.jpg" class="photo-grid-2">
+                <img src="img/a2/lab_process3.jpg" class="photo-grid-3">
+                <img src="img/a2/lab_process4.jpg" class="photo-grid-4">
+            </div>
+
+            <br>
+
+            <h3>Thank youuu</h3>
+            Nadya the Prof for the helpful in-class Grasshopper tutorial & question-answering<br>
+            Andy Moon for debugging the in-class Grasshopper tutorial with me during the break<br>
+            Priyana Patel for being a great lab bud<br><br>
+
+            <h3>Source files</h3>
+            <a href="https://drive.google.com/file/d/1LCkt4LB6_Y0LmU5rnqdajgNCpaSoS4xv/view?usp=sharing" target="_blank">Grasshopper</a>
+            <a href="https://drive.google.com/file/d/1V9gBhxQf8ns72IspDJzNKljaDvEltFRf/view?usp=sharing" target="_blank">Rhino</a>
+            <a href="https://drive.google.com/file/d/1RBajkB0fO8YMGuga5HN93q33IdaSe_Vr/view?usp=sharing" target="_blank">Illustrator</a>
+        </section>
+    </body>
+</html>
