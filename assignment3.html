@@ -33,6 +33,9 @@
 
             <p>For this assignment, we needed to assemble our new Ender 3 Pro 3D printer and create a variety of shapes in Rhino, slice them in Cura, and print them with it.</p>
 
+
+            <!-- printer assembly -->
+
             <h3>Printer assembly</h3>
 
             <p>I began this process with a zest for life and high hopes. I unboxed this bad boy and laid it all out excitedly. I watched and re-watched dudes doing it on YouTube (<a href="https://youtu.be/me8Qrwh907Q" target="_blank">1</a>, <a href="https://youtu.be/ibsOYzXduYc" target="_blank">2</a>) and found more in-depth <a href="https://images-na.ssl-images-amazon.com/images/I/A1RtrhQ8ZOL.pdf" target="_blank">assembly instructions</a> and attempted to follow along. My iPad died mid-timelapse, so there's a little bit of uncaptured progress, but you can see that I'm doin the thing. I'm connecting shit, I'm making sure beams line up and parts don't wiggle, I'm plugging in all the wires, etc. I don't feel the need to explain this full process because there's a whole corner of the internet doing that already. All you need to know is that at this point, I feel accomplished. This printer is a complicated lil beast but it's all in one piece now and I did that. I've laid it to rest on a coffee table because I live in a room and use the rest of my desk space constantly and completely. I'm showing pics of it to my friends like it's my new pet.</p>
@@ -63,6 +66,9 @@
                 <img src="img/a3/bed_level_1.jpg" class="photo-grid-2">
             </div>
 
+
+            <!-- making shapes -->
+
             <h3>Modeling & slicing shapes</h3>
 
             <p>What a cliffhanger! But to talk about the shapes, we do need to take a step back onto the computer. I modeled each shape in Rhino in cm and exported it as a .stl with a tolerance of 0.01cm (except the one cylinder that specified needing a smaller tolerance). Here's the <a href="https://drive.google.com/file/d/1LHI7KbccNyxT5KsMFEknTy2c7bxnkE2I/view?usp=sharing" target="_blank">Rhino file</a> of every shape.</p>
@@ -72,6 +78,9 @@
             <p>I then imported that .stl into Cura and scaled it up from 100% to 1000%, because Cura imported the shape in mm even though I exported it in cm. The internet said this was normal, so I didn't worry too much about it. I then sliced the shape in Cura based on the specifications of the assignment and learned experience of my printer's quirks and preferences over time, and exported that slice as a .gcode file and saved it onto the SD card to print from. In each shape's section, I'll detail what settings I used and link the .stl and .gcode files.</p>
 
             <img src="img/a3/cura.png" class="center" style="width:100%;">
+
+
+            <!-- cubes -->
 
             <h3>A 2cm cube with the standard "low quality" settings</h3>
 
@@ -90,6 +99,7 @@
                 <img src="img/a3/cube_low_1.jpg" class="photo-grid-1">
                 <img src="img/a3/cube_low_2.jpg" class="photo-grid-2">
             </div>
+
 
             <h3>A 2cm cube with the standard "standard quality" settings</h3>
 
@@ -113,16 +123,17 @@
                 <img src="img/a3/cube_standard_2.jpg" class="photo-grid-2">
             </div>
 
+
             <h3>A 2cm cube with the standard "super quality" settings</h3>
 
-            <p>Sadly, the same refinements don't work for the super cube. I kick the print off, go to a concert, come home, and my filament is clogged around the nozzle into oblivion. I suspect the still not-quite-level bed has something to do with it and watch a bunch of videos about common bed leveling mistakes that lead me to take apart the frame and put it back together again. I don't record this because I'm also beginning to suspect my printer is camera shy. The bed seems slightly more level after hours of checking right angles, but now my filament isn't feeding. I ask Discord for help and ultimately shove it through with all of the angst in my heart, and it starts finally coming back out, but it's not sticking to anything. Alas, eventually I re-level the bed and raise the bed temp to 80 per Vanessa's suggestion that the bed may need to be hotter for the prints to adhere in Discord. Finally, the super cube is born.</p>
+            <p>Sadly, the same refinements don't work for the super cube. I kick the print off, go to a concert, come home, and my filament is clogged around the nozzle into oblivion. I suspect the still not-quite-level bed has something to do with it and watch a bunch of videos about common bed leveling mistakes that lead me to take apart the frame and put it back together again. I don't record this because I'm also beginning to suspect my printer is camera shy. The bed seems slightly more level after hours of checking right angles, but now my filament isn't feeding. I ask Discord for help and ultimately shove it through with all of the angst in my heart, and it starts finally coming back out, but it's not sticking to anything. Alas, eventually I re-level the bed and raise the bed temp to 100 per Vanessa's suggestion that the bed may need to be hotter for the prints to adhere in Discord. Finally, the super cube is born.</p>
 
             <div class="photo-grid center">
                 <video width="100%" controls class="photo-grid-1">
                     <source src="img/a3/discord_filament.mp4" type="video/mp4">
                 </video>
                 <video width="100%" controls class="photo-grid-2">
-                    <source src="img/a3/filament_fix.mp4" type="video/mp4">
+                    <source src="img/a3/filament_fix.mov" type="video/mp4">
                 </video>
             </div>
 
@@ -131,17 +142,158 @@
             </video>
 
             <h4 class="center">Specs</h4>
-            <div class="center"><a href="https://drive.google.com/file/d/1G5065uQhTsibFRyzDGD7X_wo7hXtfBPz/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1U-Gw7IpDpBl-8i8teJF9k-bLC_sR0n71/view?usp=sharing" target="_blank">gcode</a> | 38m 17s</div>
+            <div class="center"><a href="https://drive.google.com/file/d/1G5065uQhTsibFRyzDGD7X_wo7hXtfBPz/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1E58DXDE6lCrRWU1nG0b4G4GuGE3m48Ee/view?usp=sharing" target="_blank">gcode</a> | 1h 13m 46s</div>
             <div class="photo-grid center">
                 <img src="img/a3/cube_super_1.jpg" class="photo-grid-1">
                 <img src="img/a3/cube_super_2.jpg" class="photo-grid-2">
             </div>
 
+
             <h3>A 2 cm cube with a concentric top and bottom layer and your favorite print setting from the previous cubes</h3>
+
+            <p>I make the bed a little less hot (90) because the super cube came out a lil sticky on the bottom, I use "low" quality (from here on out) because time, and I try out a brim instead of a raft. She's beautiful.</p>
+
+            <video width="100%" controls>
+              <source src="img/a3/cube_concentric_process_1.mov" type="video/mp4">
+            </video>
+            <img src="img/a3/cube_concentric_process_2.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1G5065uQhTsibFRyzDGD7X_wo7hXtfBPz/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1OCG66EUMwKwY52FWB94b9sqj0-kNBRF-/view?usp=sharing" target="_blank">gcode</a> | 25min 1s</div>
             <div class="photo-grid center">
                 <img src="img/a3/cube_concentric_1.jpg" class="photo-grid-1">
                 <img src="img/a3/cube_concentric_2.jpg" class="photo-grid-2">
             </div>
+
+
+            <!-- tubes -->
+
+            <h3>A tube 3cm in diameter and 3cm high with a single extrusion wall thickness</h3>
+
+            <p>For the sake of my time and yours, I'm going to speed up describing the rest of these shapes. I'll show you their final products and any cute process shots I may have gotten, but otherwise, just assume there was probably some trial and error involved, but they all exist now.</p>
+
+            <img src="img/a3/tube_single_process_1.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1gxFH6veG_4m1Ah3z_6S1Pj0hBQnFObEI/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1Dl1JO2G569VrfjMgI8m6LVzJulrJqHvY/view?usp=sharing" target="_blank">gcode</a> | 33m 25s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/tube_single_1.jpg" class="photo-grid-1">
+                <img src="img/a3/tube_single_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <h3>A tube 3cm in diameter and 3cm high with a double extrusion wall thickness and random z-seam alignment</h3>
+
+            <video width="100%" controls>
+              <source src="img/a3/tube_double_process_1.mov" type="video/mp4">
+            </video>
+            <img src="img/a3/tube_double_process_2.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1JKBzKjkJwimTw5OSTb09QRtAIRKSrQdz/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1DD-mOOWiA4inYwe2qI542u5Ul5a0ECgo/view?usp=sharing" target="_blank">gcode</a> | 45m 48s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/tube_double_1.jpg" class="photo-grid-1">
+                <img src="img/a3/tube_double_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <!-- cylinders -->
+
+            <h3>A cylinder 3cm in diameter exported with a 0.1mm tolerance</h3>
+
+            <video width="100%" controls>
+              <source src="img/a3/cylinder_0.1mm_process_1.mov" type="video/mp4">
+            </video>
+            <img src="img/a3/cylinder_0.1mm_process_2.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1GG3jpWK8LA7av7h5uBiOsXfrGliQ0L0H/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1aXO3lJBOOzjO9iA-ZIRJUYqhBcqQx-vh/view?usp=sharing" target="_blank">gcode</a> | 40m 42s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/cylinder_0.1mm_1.jpg" class="photo-grid-1">
+                <img src="img/a3/cylinder_0.1mm_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <h3>A cylinder 3cm in diameter exported with a 0.001mm tolerance</h3>
+
+            <img src="img/a3/cylinder_0.001mm_process_1.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1OLU-mppQEWQxBGKRSYn1d9_OYb5Ynshe/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1Gfr8IvbNY5EXAMCfYjXkFJ4K9KfwRs1A/view?usp=sharing" target="_blank">gcode</a> | 40m 53s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/cylinder_0.001mm_1.jpg" class="photo-grid-1">
+                <img src="img/a3/cylinder_0.001mm_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <h3>A cylinder 3cm in diameter with special mode "spiralize outer contour"</h3>
+
+            <video width="100%" controls>
+              <source src="img/a3/cylinder_spiralize_process_1.mov" type="video/mp4">
+            </video>
+            <img src="img/a3/cylinder_spiralize_process_2.jpg" class="center">
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1OLU-mppQEWQxBGKRSYn1d9_OYb5Ynshe/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1FjkHrRTRkIr9v5c3IGdTbiC-s7GGcms7/view?usp=sharing" target="_blank">gcode</a> | 30m 35s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/cylinder_spiralize_1.jpg" class="photo-grid-1">
+                <img src="img/a3/cylinder_spiralize_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <h3>A cylinder 3cm in diameter printed on its side with supports on</h3>
+
+            <video width="100%" controls>
+              <source src="img/a3/cylinder_side_process_1.mov" type="video/mp4">
+            </video>
+            <div class="photo-grid center">
+                <img src="img/a3/cylinder_side_process_2.jpg" class="photo-grid-1">
+                <img src="img/a3/cylinder_side_process_3.jpg" class="photo-grid-2">
+            </div>
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1OLU-mppQEWQxBGKRSYn1d9_OYb5Ynshe/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1UMx2I4IOzgLHaZa_NbBBHST13Cvs5TFr/view?usp=sharing" target="_blank">gcode</a> | 1h 1m 37s</div>
+            <div class="photo-grid center">
+                <img src="img/a3/cylinder_side_1.jpg" class="photo-grid-1">
+                <img src="img/a3/cylinder_side_2.jpg" class="photo-grid-2">
+            </div>
+
+
+            <!-- nested -->
+
+            <h3>A nested object</h3>
+
+            <p>Okay, back to using words again. I wanted to create something crazy for the nested object, but I'd already invested too much of my life in this project, so I searched around online for inspo and found a wild nested star from <a href="https://www.thingiverse.com/thing:4804260" target="_blank">Thingiverse</a>. I claim zeeero credit for this and I still did model my own object after this that I'll talk about it in a minute. I just had to share this first because it's infinitely more impressive and I wish I knew how to make shapes like this in Rhino (believe me, I tried!).</p>
+
+            <video width="100%" controls>
+              <source src="img/a3/nested_star_process_1.mov" type="video/mp4">
+            </video>
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1OOkrCq76k3Z78VyjTHwLB_RgzOYXNWVB/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1x162Yn7nrS5yyv4ty427-mciVACi13vh/view?usp=sharing" target="_blank">gcode</a> | 3hr 23m 53s</div>
+            <video width="100%" controls>
+              <source src="img/a3/nested_star.mov" type="video/mp4">
+            </video>
+
+            <p>Sadly, here's what I actually modeled. It's three triangles inside each other. It fulfills the criteria...and I'm already judging myself, so you don't need to also.</p>
+
+            <video width="100%" controls>
+              <source src="img/a3/nested_tri_process_1.mov" type="video/mp4">
+            </video>
+
+            <h4 class="center">Specs</h4>
+            <div class="center"><a href="https://drive.google.com/file/d/1QiKPShrOsyrEw9ABY-w3gscvgZVkMd6w/view?usp=sharing" target="_blank">stl</a>  |  <a href="https://drive.google.com/file/d/1FwuIX-0vZaA7BUFAnuv9GC53lZa7PWZJ/view?usp=sharing" target="_blank">gcode</a> | 27m 37s</div>
+            <video width="100%" controls>
+              <source src="img/a3/nested_tri.mov" type="video/mp4">
+            </video>
+
+            <h3>That's all, folks!</h3>
+
+            <p>To end, here's my graveyard of 3D print attempts. This week was a doozy. xoxo</p>
+
+            <img src="img/a3/graveyard.jpg" style="width:100%" class="center">
+
+            <!-- acknowledgements -->
 
             <h3>Thank youuu</h3>
             The Saints of Discord
