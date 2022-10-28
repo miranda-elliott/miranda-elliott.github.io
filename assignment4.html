@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Miranda Elliott | Assignment 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/673bbc70e7.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <section class="header">
+            <div id="assignment-header-img">
+                <a href="javascript:history.go(-1)"><img src="img/red-triangle.png"></a>
+            </div>
+            <div id="header-text">
+                <h1>Assignment 4</h1>
+                <h2>Subtractive Manufacturing</h2>
+            </div>
+        </section>
+
+        <section class="divider">
+            <img src="img/yellow-line.png">
+        </section>
+
+        <section class="assignment-body">
+            <div class="photo-grid">
+                <img src="img/a4/box1.jpg" class="photo-grid-1">
+                <img src="img/a4/box2.jpg" class="photo-grid-2">
+            </div>
+
+            <p>For this assignment, we needed to design a box made up of flat panels with fingerjoints/boxjoints, tabs, or another joining method design for sheet material, then 3D print it in separate pieces.</p>
+
+            <p>I started by finding a <a href="https://www.youtube.com/watch?v=8EUG-dx2lug&t=25s&ab_channel=GH.parametricdesign" target="_blank">Grasshopper tutorial</a> for a creating a box with fingerjoints. I was still feeling a little iffy on my Grasshopper skills and wanted to invest more time in getting a handle on parametric modeling. The video walked through how to create the sides, but not the top or bottom, so I followed along, writing my own definition loosely based on theirs with edits and expansions. My final definition creates a full six sided box with fingerjoints so that it can be pressed together and fit tightly with no additional adhesion needed. In the definition, one can input the height/width of each side panel (each is a square), depth of each side panel (also the width/depth of each slot), and the number of partitions that the slot alignment is based on (each side will have half that number of slots). I've commented what's happening in each stage in the .gh file, but will include screenshots of a few key moments.
+
+            <img src="img/a4/gh_1.png" class="center" style="width:100%;">
+            <img src="img/a4/gh_2.png" class="center" style="width:100%;">
+            <img src="img/a4/gh_3.png" class="center" style="width:100%;">
+
+            <p>What I like the most about parametric modeling is that you can make dumb decisions that only set you back for the time it takes to print and test them. Then you just adjust a few sliders and keep rockin and rolllin. For instance, I started by test printing squares that were 2.5 cm x 2.5 cm x 0.1 cm panels divided into 10 partitions. When they started printing I realized they were essentially scalloped squares and the depth was way too thin for the slots to function as joints, and I canceled the print job after the first couple layers.</p>
+
+            <div class="photo-grid center">
+                <img src="img/a4/attempt1_model.jpg" class="photo-grid-1">
+                <img src="img/a4/attempt1_progress.jpg" class="photo-grid-2">
+            </div>
+
+            <p>I then landed on 5 cm x 5 cm x 1 cm panels divided into 8 partitions (aka 4 alternating slots on each side). I began by printing a half-sized model (2.5 cm x 2.5 cm x 0.5 cm panels) from a .stl exported with a tolerance of 0.1 mm, but the fit was a little too snug. I next printed it at full-size from a .stl exported with a tolerance of 0.001 mm, and the measurements were more accurate and pieces fit together better, but you still needed to force them a bit. The prints also took an hour per panel and the fourth one became a spaghetti monster halfway through, so I decided to try for something a little smaller and thinner and cut my losses.</p>
+
+            <div class="photo-grid center">
+                <img src="img/a4/attempt2_model.jpg" class="photo-grid-1">
+                <img src="img/a4/attempt2_progress.jpg" class="photo-grid-2">
+            </div>
+
+            <p>I remembered a conversation with Jess Hord about how changing the infill type could make the prints more flexible, so I looked into that a bit, and decided to try concentric infill with 25% density based on <a href="https://all3dp.com/2/cura-infill-patterns-all-you-need-to-know/" target="_blank">this article</a>. I created 3 cm x 3 cm x 0.5 cm panels divided into 4 partitions (aka 2 alternating slots on each side) and exported them with 0.001 tolerance. This was the golden ticket! I printed them in groups of 2, which took 32 min each, so in total printing took 16 min per panel and 96 min for the full box. Most importantly, in the end they all clicked together sooooO satisfyingly.</p>
+
+            <div class="photo-grid center">
+                <img src="img/a4/final_model.jpg" class="photo-grid-1">
+                <img src="img/a4/final_progress.jpg" class="photo-grid-2">
+                <video width="100%" controls class="photo-grid-3">
+                    <source src="img/a4/final_assembly_1.mov" type="video/mp4">
+                </video>
+                <video width="100%" controls class="photo-grid-4">
+                    <source src="img/a4/final_assembly_2.mov" type="video/mp4">
+                </video>
+            </div>
+
+            <h3>Source files</h3>
+            <a href="https://drive.google.com/file/d/1VE3NQAsu0TJPZg11u6N9c4PHoNPa4-bv/view?usp=sharing" target="_blank">Grasshopper</a>
+            <a href="https://drive.google.com/file/d/1dAxrigGsgznOhobw0DwgmQ-tnr90kOE2/view?usp=sharing" target="_blank">Rhino</a>
+            <a href="https://drive.google.com/file/d/1V00ObQIz-QFIeHkcLML2euBmhCZ4Kac_/view?usp=sharing" target="_blank">STL</a>
+            <a href="https://drive.google.com/file/d/1zXPP7XTW4mheENI-DRnoUP3rtsMGFISB/view?usp=sharing" target="_blank">Gcode</a>
+
+        </section>
+    </body>
+</html>
