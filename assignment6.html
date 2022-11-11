@@ -69,21 +69,47 @@
                 </video>
             </div>
 
-            <h3>2: Molding and Casting</h3>
+            <br>
 
-            <p>For the second part of this assignment, we needed to design and fabricate a 2-part silicone mold. Next week, we would use that mold to cast at least 4 identical parts in plaster, ice, or gelatin. This week, we needed to design the master part that would eventually be plaster, the silicone mold, and the 3D-printed PLA mold to cast the silicone mold in. My brain is breaking just typing this.</p>
+            <h3>2: Molding and casting</h3>
 
-            <p></p>
+            <p>For the second part of this assignment, we needed to design and fabricate a 2-part silicone mold. Next week, we would use that mold to cast at least 4 identical parts in plaster, ice, or gelatin. This week, we needed to design the master part that would eventually be cast, the silicone mold, and the 3D-printed PLA mold to cast the silicone mold in. My brain is breaking just typing this.</p>
+
+            <p>I, again, brainstormed via <a href="https://pin.it/75Zq4p0" target="_blank">Pinterest board</a> and decided I'd like to make a buncha cute lil shrooms since I'd given up on that concept for the lamp. I found a <a href="https://www.cgtrader.com/free-3d-models/plant/other/mushroom-tall" target="_blank">mushroom</a> STL on CGTrader and got to work on modeling.</p>
+
+            <img src="img/a6/mushroom_master.jpg" class="center">
+
+            <p>I was having trouble wrapping my head around creating a positive of a negative of a whatever, so I decided to model the silicone mold itself, then later take the mesh boolean difference of it to create the mold of the mold that I would need to print. As evidenced above, I like Grasshopper more, so I decided to go that route rather than building directly in Rhino.</p>
+
+            <p>I began by importing the mushroom mesh, creating a box around it, then constructing registration points (4 spheres) and a pour vent (solid cylinder extending from the shroom stem to the edge of the box).</p>
+
+            <img src="img/a6/gh_mold1_box.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold2_regpts.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold3_pour.png" class="center" style="width:100%;">
+
+            <p>I mesh joined the registration points and pour vent with the mushroom and attempted to mesh boolean difference them from the box, but it appeared that it only removed the cylinder (**this is the bug!**).</p>
+
+            <img src="img/a6/gh_mold4_innards.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold5_boxwithinnards.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold6_meshdifferror.png" class="center" style="width:100%;">
+
+            <p>I then created a plane to slice the resulting box in half via mesh split and create the two sides of the mold, which confirmed that the cylinder was the only solid that'd been removed from the box. SoooOO what am I doing wrong?</p>
+
+            <img src="img/a6/gh_mold8_cuttingplanewithinnards.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold7_confirmederrorwithsplit.png" class="center" style="width:100%;">
 
             <br>
             <h3>Source files</h3>
-            <h4>1: Lamps</h4>
+            <h4>1: Lamps (cont'd)</h4>
             <a href="https://drive.google.com/file/d/1W23izrR9rEAm6xTilxy1NFSmSBTwEN8s/view?usp=sharing" target="_blank">GH</a>
             <a href="https://drive.google.com/file/d/16N7OOu-ImbZI4XkvQ2xxS2DOzhxj8Y0a/view?usp=sharing" target="_blank">Rhino</a>
             <a href="https://drive.google.com/file/d/1Xh9LiB7bdjDi0siGk3PiqEfZJ6dLAtz4/view?usp=sharing" target="_blank">STL</a>
             <a href="https://drive.google.com/file/d/1FGs-P8vVLz4JVoQ8ktrZ3J0norZoHhje/view?usp=sharing" target="_blank">Gcode</a>
 
-            <h4>2: Molding and Casting</h4>
+            <h4>2: Molding and casting</h4>
+            <a href="https://drive.google.com/file/d/1Y8Jr6TvojaimJQF9bjR9vSqYTyUdYpzV/view?usp=sharing" target="_blank">GH</a>
+            <a href="https://drive.google.com/file/d/1ONzGfCBxawBf3IFZnshdqefoHOLDIa7Q/view?usp=sharing" target="_blank">Rhino</a>
+            <a href="https://drive.google.com/file/d/1_ALZryh9N_HO58Qf9RZauxV2WGZPLSAc/view?usp=sharing" target="_blank">STL - mushroom</a>
         </section>
     </body>
 </html>
