@@ -54,7 +54,7 @@
 
             <p>Ta daaa! It fit! Let there be light!</p>
 
-            <img src="img/a6/glamourlamp.jpg" class="center" style="width:100%;">
+            <img src="img/a6/lamp_glam.jpg" class="center" style="width:100%;">
 
             <video width="100%" controls class="center" style="width:100%;">
                 <source src="img/a6/lamp_assembly.mov" type="video/mp4">
@@ -89,8 +89,10 @@
 
             <p>In Grasshopper, I pointed a brep towards the mushroom in Rhino, created a box around it, then constructed and arranged registration points (4 spheres), a pour vent (solid cylinder extending from the shroom stem to the edge of the box), and a cutting plane to use in later split operations.</p>
 
+            <img src="img/a6/gh_mold_setbrep.png" class="center" style="width:100%;">
             <img src="img/a6/gh_mold_s_box.png" class="center" style="width:100%;">
-            <img src="img/a6/gh_mold_s_elementsbeforesplit.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold_s_innards.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold_s_splitplane.png" class="center" style="width:100%;">
 
             <p>I then split that box in half with the cutting plane and created the top and bottom halves of the silicone mold. For both, half of the shroom and the pour vent needed to be removed. For the top, the registration points needed to be removed, while for the bottom, they needed to be added, so that each side of the mold could lock into the other when the plaster is setting.</p>
 
@@ -101,18 +103,18 @@
 
             <img src="img/a6/gh_mold_s_final.jpg" class="center">
 
-            <p>Then I needed to actually make the mold that I'd cast these in. To do so, I scaled up the original silicone mold box, split it in half, then aligned each half's silicone mold model to face the origin, and took the boolean difference of the silicone model from the larger half box. For the bottom half, I had to take a separate boolean difference with the registration points because of surface things, and I flipped it over just to avoid an extra rotational step in Cura later. I've commented what's happening at each step and where the baking needs to happen.</p>
+            <p>Then I needed to actually make the mold that I'd cast these in. To do so, I scaled up the original silicone mold box, split it in half, then aligned each half's silicone mold model to face the origin, and took the boolean difference of the silicone model from the larger half box. For the bottom half, I had to take a separate boolean difference with the registration points because of surface things. For the top half, I flipped it over just to avoid an extra rotational step in Cura later. I've commented what's happening at each step and where the baking needs to happen.</p>
 
             <img src="img/a6/gh_mold_p_box.png" class="center" style="width:100%;">
-            <img src="img/a6/gh_mold_p_topfinal.png" class="center" style="width:100%;">
             <img src="img/a6/gh_mold_p_bottom.png" class="center" style="width:100%;">
-            <img src="img/a6/gh_mold_p_bottomfinal.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold_p_top.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold_p_topflip.png" class="center" style="width:100%;">
 
             <p>All together now!! The full set of what will exist in many a medium!</p>
 
             <img src="img/a6/gh_mold_final.jpg" class="center">
 
-            <p>I exported the mold as a STL and tried slicing it in Cura and printing it, but I made it a liittle too small and can't pick up the silicone powder until class on Tuesday anyway (the joys of covid), so I'm going to wait until then to gather any printing recs before proceeding. Thus ends part one of molding! Next week I'll get crackin on casting the silicone mold and plaster shrooms.</p>
+            <p>I exported the mold as an STL and tried slicing it in Cura and printing it, but I made it a liittle too small and can't pick up the silicone powder until class on Tuesday anyway (the joys of covid), so I'm going to wait until then to gather any printing recs before proceeding. Thus ends part one of molding! Next week I'll get crackin on casting the silicone mold and plaster shrooms.</p>
 
             <img src="img/a6/cura_mold.png" class="center" style="width:100%;">
 
