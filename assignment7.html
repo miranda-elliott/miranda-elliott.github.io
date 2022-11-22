@@ -28,53 +28,58 @@
         <section class="assignment-body">
             <p>For this assignment, we needed to *finish* designing and fabricating a 2-part silicone mold, and use that mold to cast at least 4 identical parts in plaster, ice, or gelatin.</p>
 
-<!--            <p>For the first part of this assignment, we needed to *finish* making the lamp from last week. I had already acquired and measured the lamp innards, and I had a general concept and had done some test printing at a small scale, but needed to land on a final model and actually do the damn thing.</p>-->
+            <p>Not gonna lie, I had some misadventures. I thought I wanted to use resin and ordered a combo pack of some off-brand silicone and epoxy on Amazon...then the internet started targeting me with content on people having respiratory failure from working with resin and I took that as a sign to return those immediately and buy the recommended materials for class instead (OOMOO 30-1A:1B Mix by Volume Tin Cure Silicone Rubber and Perfect Cast Cast & Paint Harder Than Plaster Casting Material). Unfortunately, those didn't arrive until Saturday, and when I finally cast the silicone mold, the pour vent wasn't lined up. It took a minute to identify where I'd gone wrong in GH, but when I saw it, boy did I feel like a dummy. I'd added one final step to mirror across the z-axis that I thought just flipped the half mold so I wouldn't have to rotate it in Cura, but it was actually mirroring it (duh) and messing up the alignment of the registration points.</p>
 
-<!--            <p>If you recall, my plan was to make a mushroom lamp. I, however, did not make a mushroom lamp. I got sick of messing around with Rhino, kept confusing myself with how I would connect the cap and the stem without adhesive, and decided I would rather play around in Grasshopper again. It's just so much more fun?? You get to build out a definition then move knobs and watch it grow and change before your eyes?? Real life magic?! So I found a rad <a href="https://www.youtube.com/watch?v=HZ3svnR8JAo&ab_channel=architutors" target="_blank">Grasshopper tutorial</a> that used the Weaverbird plugin to create a parametric hanging lamp and followed along with that. There are lots of comments in my Grasshopper file that I'll link below of what's going down, so if you're curious, get in there. I'm not going to explain it all here.</p>-->
+            <div class="photo-grid center">
+                <img src="img/a7/mishap1.jpg" class="photo-grid-1">
+                <img src="img/a7/mishap2.jpg" class="photo-grid-2">
+            </div>
+            <img src="img/a7/gh_mishap.png" class="center">
 
-<!--            <img src="img/a6/gh_full.png" class="center" style="width:100%;">-->
+            <p>Once I fixed the GH script, I printed the new mold version in a little under 3 hours and cast a new silicone mold by mixing equal parts A and B OOMOO, stirring vigorously for 3 min, pouring it into the PLA mold, and letting it cure for 6 hours. And it fit this time! WoooOo!</p>
 
-<!--            <p>I knew that whatever I made needed to hug the bottom of the base then get wider to accommodate the bulb, and I had a vision of printing it with this sparkly red PLA I bought for Halloween and having it be this disco blood droplet spreading little streams of light around everywhere. Then I remembered that one has to screw in a bulb, so if I wanted to print it in one piece, it needed to have a big enough opening to screw the bulb in through. This was disappointing, but at this point I had also just tested positive for covid and was being faced with my limits and mortality at all angles, so I just needed to make Something. Adorable tears of disco blood be damned. I was having a hard time envisioning what shape would best fit the lamp's structure, so I modeled the two main sections of the lamp innards as cylinders in Grasshopper with heights and widths corresponding to the base and bulb, then experimented with how the lamp design's parameters could shape around those.</p>-->
+            <img src="img/a7/cura_mold.png" class="center">
+            <video width="100%" controls class="center" style="width:50%;">
+                <source src="img/a7/casting_silicone.mov" type="video/mp4">
+            </video>
+            <div class="photo-grid center">
+                <img src="img/a7/silicone_mold1.jpg" class="photo-grid-1">
+                <img src="img/a7/silicone_mold2.jpg" class="photo-grid-2">
+            </div>
 
-<!--            <img src="img/a6/gh_innards.png" class="center" style="width:100%;">-->
-<!--            <img src="img/a6/gh_final.png" class="center" style="width:100%;">-->
+            <p>I also printed a spiralized outer contour to hold the mold upright while the plaster cured. Then I got impatient and didn't want to waste a bunch of plaster, so I printed another spiralized outer contour to see if I could also cast plaster in the imperfectly fitting silicone mold by shoving it into the holder and forcing the pour vent to align (and it actually did - you'll see!).</p>
 
-<!--            <p>Finally, it was time to slice up this bad boy in Cura and print. I flipped it over so that the wider opening was at the bottom and decided to use a raft and forgo supports. I set a slightly higher printing temperature (205) for the new filament (per Amazon review recommendations), and decided to print with concentric infill in case that happened to be prettier for light shining through. After a beautiful 4h 27m 15s of whirring, she came into existence. My iPad died during the timelapse, but you can see the first 2/3 being constructed below. You can also see how the raft simply did not want to let go of her top layer, so she's got a lil shag going on, but we're not gonna let that get us down.</p>-->
+            <img src="img/a7/cura_holder.png" class="center">
 
-<!--            <div class="photo-grid center" style="width:100%;">-->
-<!--                <img src="img/a6/cura.jpg" class="photo-grid-1">-->
-<!--                <video width="100%" controls class="photo-grid-2">-->
-<!--                    <source src="img/a6/lamp_timelapse.mov" type="video/mp4">-->
-<!--                </video>-->
-<!--                <img src="img/a6/lamp_final_print.jpg" class="photo-grid-3">-->
-<!--                <video width="100%" controls class="photo-grid-4">-->
-<!--                    <source src="img/a6/lamp_raft_oops.mov" type="video/mp4">-->
-<!--                </video>-->
-<!--            </div>-->
+            <p>I placed the silicone molds with the pour vents facing up in the printed contours and secured the top with a rubber band. I then cast the mushies by combining 3 parts Perfect Cast with 1 part water, mixing the solution with purpose for 2 min, pouring it into the silicone mold pour vents (very messily), then letting them cure for 45 min. Over and over again.</p>
+            <div class="photo-grid center">
+                <video width="100%" controls class="photo-grid-1">
+                    <source src="img/a7/plaster_cast1.mov" type="video/mp4">
+                </video>
+                <video width="100%" controls class="photo-grid-4">
+                    <source src="img/a7/plaster_cast2.mov" type="video/mp4">
+                </video>
+                <img src="img/a7/casting_plaster1.jpg" class="photo-grid-2">
+                <img src="img/a7/casting_plaster2.jpg" class="photo-grid-3">
+            </div>
 
-<!--            <p>Ta daaa! It fit! Let there be light!</p>-->
+            <p>I've made 7 in total so far. Are they flawless and perfectly identical? Of course not, you masochist. But their lil wrinkles and dips make them even more adorable and now I can hide teeny shrooms around my friends' homes like the sneaky woodland elf I was always destined to be. (Or make a bunch, paint em, and throw em in with music merch! Or both!)</p>
 
-<!--            <video width="100%" controls class="center" style="width:100%;">-->
-<!--                <source src="img/a6/lamp_assembly.mov" type="video/mp4">-->
-<!--            </video>-->
+            <div class="photo-grid center">
+                <img src="img/a7/shrooms1.jpg" class="photo-grid-1">
+                <img src="img/a7/shrooms2.jpg" class="photo-grid-2">
+            </div>
 
-<!--            <div class="photo-grid center" style="width:100%;">-->
-<!--                <video width="100%" controls class="photo-grid-1">-->
-<!--                    <source src="img/a6/lamp_flip_test.mov" type="video/mp4">-->
-<!--                </video>-->
-<!--                <img src="img/a6/lamp_off.jpg" class="photo-grid-2">-->
-<!--                <img src="img/a6/lamp_on.jpg" class="photo-grid-3">-->
-<!--                <video width="100%" controls class="photo-grid-4">-->
-<!--                    <source src="img/a6/lamp_angles.mov" type="video/mp4">-->
-<!--                </video>-->
-<!--            </div>-->
+            <img src="img/a7/shrooms4.jpg" class="center">
 
             <br>
             <h3>Source files</h3>
-<!--            <a href="https://drive.google.com/file/d/1W23izrR9rEAm6xTilxy1NFSmSBTwEN8s/view?usp=sharing" target="_blank">GH</a>-->
-<!--            <a href="https://drive.google.com/file/d/16N7OOu-ImbZI4XkvQ2xxS2DOzhxj8Y0a/view?usp=sharing" target="_blank">Rhino</a>-->
-<!--            <a href="https://drive.google.com/file/d/1Xh9LiB7bdjDi0siGk3PiqEfZJ6dLAtz4/view?usp=sharing" target="_blank">STL</a>-->
-<!--            <a href="https://drive.google.com/file/d/1FGs-P8vVLz4JVoQ8ktrZ3J0norZoHhje/view?usp=sharing" target="_blank">Gcode</a>-->
+            <a href="https://drive.google.com/file/d/1oAPlU0G0OZQsKNeVWqjx1W3hm1cr93pj/view?usp=sharing" target="_blank">GH</a>
+            <a href="https://drive.google.com/file/d/1H3S_siJr9yNkZwafAUbXjcO7IuV1rw_X/view?usp=sharing" target="_blank">Rhino</a>
+            <a href="https://drive.google.com/file/d/1yjKL5--9vN87TPiQTHSGsd3J-LGC84YJ/view?usp=sharing" target="_blank">STL - mold</a>
+            <a href="https://drive.google.com/file/d/1lUwxqyYcly4P-A5_T7Ru0TrIgX60jPx6/view?usp=sharing" target="_blank">STL - silicone mold holder</a>
+            <a href="https://drive.google.com/file/d/1LX28CvbiE8GdP6Jd9cHgFtlbCOayv4zm/view?usp=sharing" target="_blank">Gcode - mold</a>
+            <a href="https://drive.google.com/file/d/1uzdUv3IdWSrVy8YgVTPXGxOTQ9FQRaVX/view?usp=sharing" target="_blank">Gcode - silicone mold holder</a>
         </section>
     </body>
 </html>
