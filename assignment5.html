@@ -17,7 +17,7 @@
             </div>
             <div id="header-text">
                 <h1>Assignment 5</h1>
-                <h2>Getting Meshy and Lamps</h2>
+                <h2>Getting Meshy</h2>
             </div>
         </section>
 
@@ -26,11 +26,9 @@
         </section>
 
         <section class="assignment-body">
-            <h3>1: Getting meshy</h3>
+            <p>For this assignment, we needed to modify the mesh of two STLs to produce a single printable STL.</p>
 
-            <p>For the first part of this assignment, we needed to modify the mesh of two STLs to produce a single printable STL.</p>
-
-            <p>I spent an outrageous amount of time scrolling Thingiverse, and finally landed on combining a <a href="https://www.thingiverse.com/thing:50174" target="_blank">skeleton hand</a> and a <a href="https://www.thingiverse.com/thing:155495" target="_blank">goblet</a> from Thingiverse. I wanted the skeleton hand to be daintily holding the goblet between its fingers. Been having a real claw moment lately.</p>
+            <p>I spent an outrageous amount of time scrolling Thingiverse, and finally landed on combining a <a href="https://www.thingiverse.com/thing:50174" target="_blank">skeleton hand</a> and a <a href="https://www.thingiverse.com/thing:155495" target="_blank">goblet</a>. I wanted the skeleton hand to be daintily holding the goblet between its fingers. Been having a real claw moment lately.</p>
 
             <div class="photo-grid center">
                 <img src="img/a5/hand_og.jpg" class="photo-grid-1">
@@ -49,81 +47,21 @@
 
             <div class="photo-grid center">
                 <img src="img/a5/combined_1.jpg" class="photo-grid-1">
-                <video width="100%" controls class="photo-grid-2">
+                <video width="100%" controls class="photo-grid-4">
                     <source src="img/a5/combined_cleaning.mov" type="video/mp4">
                 </video>
-<!--                <img src="img/a5/combined_4.jpg" class="photo-grid-2">-->
                 <img src="img/a5/combined_2.jpg" class="photo-grid-3">
-                <img src="img/a5/combined_3.jpg" class="photo-grid-4">
+                <img src="img/a5/combined_3.jpg" class="photo-grid-2">
             </div>
-
-            <h3>2: Lamps</h3>
-
-            <p>For the second part of this assignment, we needed to *start* making a lamp by acquiring lamp innards, measuring those innards, and digitally fabricating a lamp that wouldn't need any adhesives to attach to the innards.</p>
-
-            <p>I, again, spent too much time conceptualizing my dream 3D printed lamp. I made a <a href="https://www.pinterest.com/mirflanda/dig-fab-lamp/" target="_blank">Pinterest board</a> of ideas. It got out of hand.</p>
-
-            <img src="img/a5/pintrest.png" class="center">
-
-            <p>I eventually landed on the realization that my teeny apartment is full of shit already, but I have been wanting to build out a funkier live performance setup for my music project, so I could focus on designing for that. The project is named after a mushroom - specifically, an Old Man of the Woods - so I wanted to create a lamp of that lil guy and base the model on an illustration from my merch. The cap is spiky and could lend itself to emitting some geometric light patterns, so I started researching YouTube tutorials on creating voronoi patterns in Grasshopper to construct it.</p>
-
-            <img src="img/a5/omw_reference.jpg" class="center">
-
-            <p>Sadly, my Grasshopper tutorials were fruitless and left me with only a lingering urge to kill. First, I followed along with the <a href="https://youtu.be/3Tt3UXT674Y" target="_blank">this tutorial</a> about making a facet dome and ended up with an open polysurface that I couldn't figure out how to make into a mesh (the horror!). Other watchers had experienced the same issue, as seen in the comments...which I definitely should've read before watching. Next, I tried following <a href="https://youtu.be/Z-gy44igHQc" target="_blank">this tutorial</a> about constructing a fascia ball, and I ended up with an ice pick sculpture that looked veery different from their spiky ball output no matter what parameters I set.</p>
-
-            <div class="photo-grid center">
-                <img src="img/a5/gh_fail_me_1.png" class="photo-grid-1">
-                <img src="img/a5/gh_fail_me_2.png" class="photo-grid-2">
-                <img src="img/a5/gh_fail_vid.png" class="photo-grid-3">
-                <img src="img/a5/gh_fail_me.png" class="photo-grid-4">
-            </div>
-
-            <p>Remembering how many meshes existed on Thingiverse already, I decided to use one from there as the cap to start, and chose this <a href="https://www.thingiverse.com/thing:3187251" target="_blank">pinecone-esque dragon egg</a>. I created a simple tube that matched the width of the lamp innard (29mm according to Amazon - I hadn't recieved it in the mail yet). I made that a mesh, imported and scaled the dragon ball STL until it made sense proportionally as a mushroom cap, and joined them into a single mesh. Before I put any more effort into the modeling phase, I wanted to see what this could look like printed with "spiralize outer contour", so I exported it as an STL, imported it into Cura, sliced it with those settings, and test printed it at 10% of its intended size to save time.</p>
-
-            <div class="photo-grid center">
-                <img src="img/a5/omw_model_1.png" class="photo-grid-1">
-                <img src="img/a5/omw_model_1_closed.png" class="photo-grid-2">
-            </div>
-
-            <p>
-                The resulting print was very useful as a first iteration for planning purposes. It was cute but verrry thin - removing the shroom from the raft made its cap and stem crack apart from each other. It offered important intel into the disco potential of the pinecone cap (big fan!). I took the following notes for future iterations to explore over the next week:
-                <ul>
-                    <li>Add more texture to stem</li>
-                    <li>Make cap bigger and stem longer and thinner (atleast proportionally)</li>
-                    <li>Determine whether to print full model or spiralized outer contour - if contour, determine if it's possible to increase layer thickness</li>
-                    <li>Print cap and stem separately so that stem can be attached before lightbulb is screwed in and cap can be attached after (see <a href="https://www.thingiverse.com/thing:5264387" target="_blank">modular mushrooms</a> and <a href="https://www.thingiverse.com/thing:784917" target="_blank">mushroom lamp</a> on Thingiverse for inspiration)</li>
-                </ul>
-            </p>
-
-            <div class="photo-grid center">
-                <img src="img/a5/omw_model_1_progress_1.jpg" class="photo-grid-1">
-                <video width="100%" controls class="photo-grid-2">
-                    <source src="img/a5/omw_model_1_progress_2.mov" type="video/mp4">
-                </video>
-            </div>
-
-            <p>Finally, I got the lamp base in the mail, so I put a little IKEA lightbulb in there and measured it all together. The measurements are listed in mm in the image below, as recorded via a caliper and measuring tape. I divided it into segments with maximum widths that the lamp should fit around and recorded the height of each.</p>
-
-            <img src="img/a5/innard_measurements.jpg" class="center">
-
-            <p>This is as far as I was able to get this week. Over the next week, I'll finalize the model based on these measurements, print the lamp parts full-sized, and actually assemble the lamp.</p>
+            <img src="img/a5/combined_4.jpg" class="center">
 
             <br>
             <h3>Source files</h3>
-            <h4>1: Getting meshy</h4>
             <a href="https://drive.google.com/file/d/1of2YE0pS2bFbtX0JWGHAsDgEzKalUfbT/view?usp=sharing" target="_blank">Rhino</a>
             <a href="https://drive.google.com/file/d/1NZ2r_U6DBTbZyZCdV4aqAk4FiVFRGBsw/view?usp=sharing" target="_blank">STL - hand (from Thingiverse)</a>
             <a href="https://drive.google.com/file/d/1sPpU2gDqgKhylZvwXRB_m75l7eZZuPP7/view?usp=sharing" target="_blank">STL - goblet (from Thingiverse)</a>
             <a href="https://drive.google.com/file/d/1nT9Y29HD3k4-4pfuTHpyxnDessaXno5O/view?usp=sharing" target="_blank">STL - hand holding goblet</a>
             <a href="https://drive.google.com/file/d/14Yvo4sGhVCEJMeEq8lGoY8kDSpsNWIIM/view?usp=sharing" target="_blank">Gcode</a>
-
-            <h4>2: Lamps</h4>
-            <a href="https://drive.google.com/file/d/1tTONlL_r9FkwNALuki3PgsOmzh_Zthsz/view?usp=sharing" target="_blank">Rhino</a>
-            <a href="https://drive.google.com/file/d/1jCB5R8gkhzP5Z8dRQoAPxYCfHlRfmks9/view?usp=sharing" target="_blank">GH - voronoi dome tutorial</a>
-            <a href="https://drive.google.com/file/d/1y42r37juOFm7dwFNLYj_Q8uCc2DsfJhK/view?usp=sharing" target="_blank">GH - fascia ball tutorial</a>
-            <a href="https://drive.google.com/file/d/1qv7J0r5rxczFDoMKKc1ag5cif1KQZuVd/view?usp=sharing" target="_blank">STL - spiky dragon egg (from Thingiverse)</a>
-            <a href="https://drive.google.com/file/d/1gVmbrsq1Gbg-9CB6-Dkzf4unhKFoYoMM/view?usp=sharing" target="_blank">STL - mushroom attempt 1</a>
-            <a href="https://drive.google.com/file/d/1fF-s9uSOGMnvLLKrm5qzdhBrw-lkaWgM/view?usp=sharing" target="_blank">Gcode - mushroom attempt 1</a>
         </section>
     </body>
 </html>
