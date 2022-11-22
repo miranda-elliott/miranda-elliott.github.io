@@ -17,7 +17,7 @@
             </div>
             <div id="header-text">
                 <h1>Assignment 7</h1>
-                <h2>More Molding and Casting</h2>
+                <h2>Molding and Casting</h2>
             </div>
         </section>
 
@@ -26,9 +26,69 @@
         </section>
 
         <section class="assignment-body">
-            <p>For this assignment, we needed to *finish* designing and fabricating a 2-part silicone mold, and use that mold to cast at least 4 identical parts in plaster, ice, or gelatin.</p>
+            <p>For this assignment, we needed to design and fabricate a 2-part silicone mold, then use that to cast at least 4 identical parts in plaster (or another material, i.e. ice, gelatin, resin).</p>
 
-            <p>Not gonna lie, I had some misadventures. I thought I wanted to use resin and ordered a combo pack of some off-brand silicone and epoxy on Amazon...then the internet started targeting me with content on people having respiratory failure from working with resin and I took that as a sign to return those immediately and buy the recommended materials for class instead (OOMOO 30-1A:1B Mix by Volume Tin Cure Silicone Rubber and Perfect Cast Cast & Paint Harder Than Plaster Casting Material). Unfortunately, those didn't arrive until Saturday, and when I finally cast the silicone mold, the pour vent wasn't lined up. It took a minute to identify where I'd gone wrong in GH, but when I saw it, boy did I feel like a dummy. I'd added one final step to mirror across the z-axis that I thought just flipped the half mold so I wouldn't have to rotate it in Cura, but it was actually mirroring it (duh) and messing up the alignment of the registration points.</p>
+            <h3>Week 1: Modeling</h3>
+
+            <p>This week, we needed to design the master part that would eventually be cast, the silicone mold, and the 3D-printed PLA mold to cast the silicone mold in. My brain is breaking just typing this.</p>
+
+            <p>I brainstormed via <a href="https://pin.it/75Zq4p0" target="_blank">Pinterest board</a> and decided I'd like to make a buncha cute lil shrooms since I'd given up on that concept for the lamp. I found a <a href="https://www.cgtrader.com/free-3d-models/plant/other/mushroom-tall" target="_blank">mushroom</a> STL on CGTrader and got to work on modeling.</p>
+
+            <img src="img/a6/mushroom_master.jpg" class="center">
+
+            <p>I was having trouble wrapping my head around creating a positive of a negative of a whatever, so I decided to start by modeling the silicone mold itself, then take the boolean difference of it to create the mold of the silicone mold that I would need to print. As evidenced in the lamp assignment, I like Grasshopper more, so I decided to go that route rather than building directly in Rhino. This may have caused me more pain than gain, but I learned a lot! And this was my very first Grasshopper definition that I wrote without following any sort of tutorial. Definitely a struggle at times...but in the end, it worked, and hey, I'm proud of it! I'll say it!</p>
+
+            <p>I still began in Rhino though, first importing the mushroom STL, resizing it to be waaay less mesh, rotating it to be horizontal along the x-axis, performing a draft angle analysis to find where to bisect it in the mold, and arranging that midway line at the origin. I then performed a quad remesh to make it an even less complicated mesh and transformed that mesh into a brep via meshtonurb so it'd be easier to work with in boolean operations. (Okay, this isn't at all what I did at first, I actually tried to use it as a mesh in Grasshopper and was stuck for days in mesh boolean difference bullshit land, then finally figured out that this was a better way. You can read about that mesh era in Discord if you want to witness my confusion.)</p>
+
+            <img src="img/a6/rhino_draftangleanalysis.png" class="center">
+
+            <p>In Grasshopper, I pointed a brep towards the mushroom in Rhino, created a box around it, then constructed and arranged registration points (4 spheres), a pour vent (solid cylinder extending from the shroom stem to the edge of the box), and a cutting plane to use in later split operations.</p>
+
+            <img src="img/a6/gh_mold_setbrep.png" class="center">
+            <img src="img/a6/gh_mold_s_box.png" class="center">
+            <img src="img/a6/gh_mold_s_innards.png" class="center">
+            <img src="img/a6/gh_mold_s_splitplane.png" class="center">
+
+            <p>I then split that box in half with the cutting plane and created the top and bottom halves of the silicone mold. For both, half of the shroom and the pour vent needed to be removed. For the top, the registration points needed to be removed, while for the bottom, they needed to be added, so that each side of the mold could lock into the other when the plaster is setting.</p>
+
+            <img src="img/a6/gh_mold_s_top.png" class="center">
+            <img src="img/a6/gh_mold_s_bottom.png" class="center">
+
+            <p>Aren't they cute?!</p>
+
+            <img src="img/a6/gh_mold_s_final.jpg" class="center">
+
+            <p>Then I needed to actually make the mold that I'd cast these in. To do so, I scaled up the original silicone mold box, split it in half, then aligned each half's silicone mold model to face the origin, and took the boolean difference of the silicone model from the larger half box. For the bottom half, I had to take a separate boolean difference with the registration points because of surface things. For the top half, I flipped it over just to avoid an extra rotational step in Cura later. I've commented what's happening at each step and where the baking needs to happen.</p>
+
+            <img src="img/a6/gh_mold_p_box.png" class="center">
+            <img src="img/a6/gh_mold_p_bottom.png" class="center">
+            <img src="img/a6/gh_mold_p_top.png" class="center">
+            <img src="img/a6/gh_mold_p_topflip.png" class="center">
+
+            <p>All together now!! The full set of what will exist in many a medium!</p>
+
+            <img src="img/a6/gh_mold_final.jpg" class="center">
+
+            <p>I exported the mold as an STL and tried slicing it in Cura and printing it, but I made it a liittle too small and still needed to acquire the silicone for the mold and material to cast in, so I decided to save that for the next phase of the assignment. Thus ends part one of molding! Next week I'll get crackin on casting the silicone mold and plaster shrooms.</p>
+
+            <img src="img/a6/cura_mold.png" class="center">
+
+            <div class="photo-grid center">
+                <img src="img/a6/mold_test1.jpg" class="photo-grid-1">
+                <img src="img/a6/mold_test2.jpg" class="photo-grid-2">
+            </div>
+
+            <p>I'll leave you with my full Grasshopper definition (which you can also view in the file below) just because I'm still so pleased that I finally got it to work. Hopefully I'll need to cast another mold someday and can reuse it...or a classmate can use it in their final project...anyone! Anything! Within reason. You can point to a brep centered at the origin in Rhino and adjust the number sliders to move the registration points and vent around. Regardless, I'm at least definitely using it for this project.</p>
+
+            <img src="img/a6/gh_mold_fulldef1.png" class="center" style="width:100%;">
+            <img src="img/a6/gh_mold_fulldef2.png" class="center" style="width:100%;">
+
+            <br>
+            <h3>Week 2: Molding and casting</h3>
+
+            <p>This week, we needed to *finish* designing and fabricating a 2-part silicone mold and use that mold to cast at least 4 identical parts in plaster (or another material).</p>
+
+            <p>Not gonna lie, I had some misadventures. I had the bright idea of casting in resin because I wanted sparkly lil gem shrooms, so I ordered a combo pack of some off-brand silicone and epoxy on Amazon...then the internet proceeded to target me with content on people having respiratory failure from working with resin, and I took that as a sign to return those immediately and buy the recommended materials for the class instead (OOMOO 30-1A:1B Mix by Volume Tin Cure Silicone Rubber and Perfect Cast Cast & Paint Harder Than Plaster Casting Material). Unfortunately, those didn't arrive until Saturday, and when I finally cast the silicone mold, the pour vent wasn't lined up. It took some hardcore staring into space to identify where I'd gone wrong in GH, but when I saw it, boy did I feel like a dummy. That final step to mirror across the z-axis that I thought just flipped the half mold so I wouldn't have to rotate it in Cura? Bad idea. That mirroring was mirroring the registration points (in retrospect, duh) so that the two exported mold halves no longer aligned, as they weren't perfectly symmetrical.</p>
 
             <div class="photo-grid center">
                 <img src="img/a7/mishap1.jpg" class="photo-grid-1">
@@ -36,10 +96,10 @@
             </div>
             <img src="img/a7/gh_mishap.png" class="center">
 
-            <p>Once I fixed the GH script, I printed the new mold version in a little under 3 hours and cast a new silicone mold by mixing equal parts A and B OOMOO, stirring vigorously for 3 min, pouring it into the PLA mold, and letting it cure for 6 hours. And it fit this time! WoooOo!</p>
+            <p>Once I fixed the GH script, I printed the new PLA mold version. You'll notice that the mushroom is also a little more centered and the registration points and pour vent are bigger than the final model I landed on last week, which was very easy to adjust (gh ftwwww). I then cast a new silicone mold by mixing equal parts A and B OOMOO, stirring vigorously for 3 min, pouring it into the PLA mold, and letting it cure for 6 hours. And it fit this time! WoooOo!</p>
 
             <img src="img/a7/cura_mold.png" class="center">
-            <video width="100%" controls class="center" style="width:50%;">
+            <video controls class="center">
                 <source src="img/a7/casting_silicone.mov" type="video/mp4">
             </video>
             <div class="photo-grid center">
@@ -54,13 +114,13 @@
             <p>I placed the silicone molds with the pour vents facing up in the printed contours and secured the top with a rubber band. I then cast the mushies by combining 3 parts Perfect Cast with 1 part water, mixing the solution with purpose for 2 min, pouring it into the silicone mold pour vents (very messily), then letting them cure for 45 min. Over and over again.</p>
             <div class="photo-grid center">
                 <video width="100%" controls class="photo-grid-1">
-                    <source src="img/a7/plaster_cast1.mov" type="video/mp4">
-                </video>
-                <video width="100%" controls class="photo-grid-4">
-                    <source src="img/a7/plaster_cast2.mov" type="video/mp4">
+                    <source src="img/a7/plaster_cast5.mov" type="video/mp4">
                 </video>
                 <img src="img/a7/casting_plaster1.jpg" class="photo-grid-2">
                 <img src="img/a7/casting_plaster2.jpg" class="photo-grid-3">
+                <video width="100%" controls class="photo-grid-4">
+                    <source src="img/a7/plaster_cast6.mov" type="video/mp4">
+                </video>
             </div>
 
             <p>I've made 7 in total so far. Are they flawless and perfectly identical? Of course not, you masochist. But their lil wrinkles and dips make them even more adorable and now I can hide teeny shrooms around my friends' homes like the sneaky woodland elf I was always destined to be. (Or make a bunch, paint em, and throw em in with music merch! Or both!)</p>
@@ -72,14 +132,24 @@
 
             <img src="img/a7/shrooms4.jpg" class="center">
 
-            <br>
+            <br><br>
             <h3>Source files</h3>
-            <a href="https://drive.google.com/file/d/1oAPlU0G0OZQsKNeVWqjx1W3hm1cr93pj/view?usp=sharing" target="_blank">GH</a>
-            <a href="https://drive.google.com/file/d/1H3S_siJr9yNkZwafAUbXjcO7IuV1rw_X/view?usp=sharing" target="_blank">Rhino</a>
-            <a href="https://drive.google.com/file/d/1yjKL5--9vN87TPiQTHSGsd3J-LGC84YJ/view?usp=sharing" target="_blank">STL - mold</a>
-            <a href="https://drive.google.com/file/d/1lUwxqyYcly4P-A5_T7Ru0TrIgX60jPx6/view?usp=sharing" target="_blank">STL - silicone mold holder</a>
-            <a href="https://drive.google.com/file/d/1LX28CvbiE8GdP6Jd9cHgFtlbCOayv4zm/view?usp=sharing" target="_blank">Gcode - mold</a>
-            <a href="https://drive.google.com/file/d/1uzdUv3IdWSrVy8YgVTPXGxOTQ9FQRaVX/view?usp=sharing" target="_blank">Gcode - silicone mold holder</a>
+
+            <h4>Week 1: Modeling</h4>
+
+            <div><a href="https://drive.google.com/file/d/1W23izrR9rEAm6xTilxy1NFSmSBTwEN8s/view?usp=sharing" target="_blank">GH</a> <i>(has mirror bug - use files from week 2 for final working version!)</i></div>
+            <div><a href="https://drive.google.com/file/d/16N7OOu-ImbZI4XkvQ2xxS2DOzhxj8Y0a/view?usp=sharing" target="_blank">Rhino</a></div>
+            <div><a href="https://drive.google.com/file/d/1Xh9LiB7bdjDi0siGk3PiqEfZJ6dLAtz4/view?usp=sharing" target="_blank">STL - test mold</a></div>
+            <div><a href="https://drive.google.com/file/d/1FGs-P8vVLz4JVoQ8ktrZ3J0norZoHhje/view?usp=sharing" target="_blank">Gcode - test mold</a></div>
+
+            <br>
+            <h4>Week 2: Molding and casting</h4>
+            <div><a href="https://drive.google.com/file/d/1oAPlU0G0OZQsKNeVWqjx1W3hm1cr93pj/view?usp=sharing" target="_blank">GH</a></div>
+            <div><a href="https://drive.google.com/file/d/1H3S_siJr9yNkZwafAUbXjcO7IuV1rw_X/view?usp=sharing" target="_blank">Rhino</a></div>
+            <div><a href="https://drive.google.com/file/d/1yjKL5--9vN87TPiQTHSGsd3J-LGC84YJ/view?usp=sharing" target="_blank">STL - mold</a></div>
+            <div><a href="https://drive.google.com/file/d/1lUwxqyYcly4P-A5_T7Ru0TrIgX60jPx6/view?usp=sharing" target="_blank">STL - silicone mold holder</a></div>
+            <div><a href="https://drive.google.com/file/d/1LX28CvbiE8GdP6Jd9cHgFtlbCOayv4zm/view?usp=sharing" target="_blank">Gcode - mold</a></div>
+            <div><a href="https://drive.google.com/file/d/1uzdUv3IdWSrVy8YgVTPXGxOTQ9FQRaVX/view?usp=sharing" target="_blank">Gcode - silicone mold holder</a></div>
         </section>
     </body>
 </html>
