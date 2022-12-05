@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Miranda Elliott | Final Project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/673bbc70e7.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <section class="header">
+            <div id="assignment-header-img">
+                <a href="javascript:history.go(-1)"><img src="img/red-triangle.png"></a>
+            </div>
+            <div id="header-text">
+                <h1>Final Project</h1>
+                <h2>404 Stand</h2>
+            </div>
+        </section>
+
+        <section class="divider">
+            <img src="img/yellow-line.png">
+        </section>
+
+        <section class="assignment-body">
+
+            <video controls autoplay muted class="center">
+                <source src="img/a9/final_timelapse.mov" type="video/mp4">
+            </video>
+            <div class="photo-grid center">
+                <img src="img/a9/final1.jpg" class="photo-grid-1">
+                <img src="img/a9/final2.jpg" class="photo-grid-2">
+                <img src="img/a9/final3.jpg" class="photo-grid-3">
+                <img src="img/a9/final4.jpg" class="photo-grid-4">
+            </div>
+            <video controls class="center">
+                <source src="img/a9/final_360.mov" type="video/mp4">
+            </video>
+
+            <br>
+            <h3>Concept</h3>
+
+            <p>I created a stand for my Roland SP-404SX sampler to enhance the ergonomics of playing and give it a more alien cellular chrome aesthetic. It's intended to serve as functional synth jewelry, inspired by the styles of Nusi Quero and Iris Van Herpen.</p>
+
+            <div class="photo-grid center">
+                <img src="img/a8/nusi5.jpg" class="photo-grid-1">
+                <img src="img/a8/nusi2.jpg" class="photo-grid-2">
+                <img src="img/a8/iris1.jpg" class="photo-grid-3">
+                <img src="img/a8/iris2.jpg" class="photo-grid-4">
+            </div>
+
+            <br>
+            <h3>Process</h3>
+
+            <h4>Measuring the Roland SP-404SX</h4>
+
+            <p>I had planned to design the stand to stretch the full length of the 404 like other products I'd seen online, but I realized after measuring the 404 that full side pieces would be too big to print on the Ender 3 Pro bed (even diagonally), so I decided instead to utilize the holes along the back and make the stand half the length of the 404 by engaging with the middle holes on each side.</p>
+
+            <img src="img/a9/404_dimensions.jpg" class="center">
+
+            <h4>CAD modeling with Grasshopper and Rhino</h4>
+
+            <p>I started in Grasshopper by constructing 2D surfaces of the side and back panels, then extruding those into 3D solid breps to be baked themselves or used as bounding boxes for the voronoi mesh operations (as per comments in the GH file). I explain the script in the video and briefly outline it below.</p>
+
+            <video controls class="center">
+                <source src="img/a9/gh_screenrecording.mp4" type="video/mp4">
+            </video>
+
+            <p>For the side panel, I created a base rectangle with the length of the 404 (255mm) and a height of 70mm, another rectangle at an angle used to slice the base rectangle into a triangle, another rectangle at a y-offset used to slice the base rectangle at the middle 404 hole point, a slot that the back panel's teeth press-fit into, and a peg that fits into the middle 404 hole.</p>
+
+            <img src="img/a9/gh_side1.png" class="center">
+            <img src="img/a9/gh_side2.png" class="center">
+            <img src="img/a9/gh_side3.png" class="center">
+
+            <p>For the back panel, I created a base rectangle with the height of the side panel (70mm) and a width of the space between the side panels (132mm), and teeth to press-fit into the slot on each side panel.</p>
+
+            <img src="img/a9/gh_back1.png" class="center">
+            <img src="img/a9/gh_back2.png" class="center">
+
+            <p>I then built a chain of voronoi mesh operations that take a 2D surface, 3D brep, and extrusion depth as inputs, as well as adjustable parameters for the number of cells, random seed, and thickness between cells. It creates a voronoi cell polyline pattern within the boundary of the 3D brep, then uses the Weaverbird plugin to create a mesh from those polylines and thicken it to the extrusion depth.</p>
+
+            <img src="img/a9/gh_v.png" class="center">
+
+            <p>For the side panel, I fed the first shape into the voronoi mesh operation chain, adjusted the parameters until I liked the look of it, baked it, then repeated the process for the second shape. In Rhino, I joined those meshes into one, then exported it as an STL.</p>
+
+            <img src="img/a9/gh_vside1.png" class="center">
+            <img src="img/a9/gh_vside2.png" class="center">
+            <img src="img/a9/gh_vside3.png" class="center">
+            <img src="img/a9/gh_vside4.png" class="center">
+            <img src="img/a9/rh_vside5.png" class="center">
+
+            <p>For the back panel, I fed the first shape into the voronoi mesh operation chain, adjusted the parameters until I liked the look of it, baked it, then baked the second shape at their 3D solid form. In Rhino, I joined those meshes into one, then exported it as an STL.</p>
+
+            <img src="img/a9/gh_vback1.png" class="center">
+            <img src="img/a9/gh_vback2.png" class="center">
+            <img src="img/a9/gh_vback3.png" class="center">
+            <img src="img/a9/rh_vback4.png" class="center">
+
+            <p>Mirroring the side panel over the x-axis, I previewed how the panels would fit together.</p>
+
+            <img src="img/a9/rh_preview.png" class="center">
+
+            <h4>Slicing with Cura</h4>
+
+            <p>When test printing the silver PLA, I found that it printed best with a nozzle temp of 205, print speed of 45 mm/s, and raft adhesion, so I sliced with those settings in Cura. I also used 10% concentric infill at low quality to decrease print time as much as possible. I was initially nervous about some of the thin/spotty mesh around the side panel slots in Cura because it wasn't apparent in the Rhino models, but I found that if the teeth and slots were the same height and width, the press fit was tight enough to offer stability regardless of the slot perimeter not forming a full enclosure.</p>
+
+            <img src="img/a9/cura_back.png" class="center">
+            <div class="photo-grid center">
+                <img src="img/a9/cura_side.png" class="photo-grid-1">
+                <img src="img/a9/cura_sideflip.png" class="photo-grid-2">
+            </div>
+
+            <h4>3D printing</h4>
+
+            <p>I did various test prints when I was still building out the GH script and deciding on the panel structures, tolerances for the press-fit, and voronoi parameters, so there's a bit of a silver plastic graveyard in my apartment and the total print time took many days of trial and error. However, if I was just to print the final pieces, it'd take ~11 hrs. The final side panels took ~3.5 hrs each and back panel took ~4 hrs.</p>
+
+            <div class="photo-grid center">
+                <video controls width="100%" class="photo-grid-1">
+                    <source src="img/a9/print_process.mov" type="video/mp4">
+                </video>
+                <img src="img/a9/print_process2.jpg" class="photo-grid-2">
+            </div>
+
+            <h4>Assembly</h4>
+
+            <p>To assemble the stand, I simply snapped the panels together and aligned the 404's middle holes with the pegs on each side.</p>
+
+            <video controls muted class="center">
+                <source src="img/a9/assembly.mov" type="video/mp4">
+            </video>
+
+            <br>
+            <h3>Bill of materials</h3>
+            <ul>
+                <li>3D printer: Ender 3 Pro (<a href="https://www.creality3dofficial.com/products/creality-ender-3-pro-3d-printer" target="_blank">$220</a>)</li>
+                <li>PLA filament: silk silver (<a href="https://www.amazon.com/gp/product/B06XSBFB17" target="_blank">$20</a>)</li>
+                <li>Measuring devices: caliper, tape measure</li>
+            </ul>
+
+            <br>
+            <h3>Source files</h3>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1UI273ug5d8OSQtyFf6gP4imQ8XwCrXRe/view?usp=sharing" target="_blank">GH</a></li>
+                <li><a href="https://drive.google.com/file/d/1Vz0RHIuZlLB2Um_qYpmrQyUzmGfQ9bYD/view?usp=sharing" target="_blank">Rhino</a></li>
+                <li><a href="https://drive.google.com/file/d/1tQnU1Cp0zJOYwdFNj_2cmBBnIf1PjctD/view?usp=sharing" target="_blank">STL - side panel</a></li>
+                <li><a href="https://drive.google.com/file/d/1T25Qp4-KRuiyVAJpkM1f6bYvh2jWrI3b/view?usp=sharing" target="_blank">STL - back panel</a></li>
+                <li><a href="https://drive.google.com/file/d/1IHG8VLryYh1AR6u0LmnE3kzFinRMfT_9/view?usp=sharing" target="_blank">Gcode - side panel</a></li>
+                <li><a href="https://drive.google.com/file/d/1hXo3pX5lXO_pI_LDfwlDpAyoKIv72ayM/view?usp=sharing" target="_blank">Gcode - side panel flipped</a></li>
+                <li><a href="https://drive.google.com/file/d/1RAgOARe-V43g5fje_FZjO0-c_gXS3BC7/view?usp=sharing" target="_blank">Gcode - back panel</a></li>
+            </ul>
+
+            <br>
+            <h3>Thank youuu</h3>
+            <p>I investigated a bunch of voronoi and weaverbird tutorials and forums, and I honestly don't remember where I got the inspiration for what I landed on, but it was likely a patchwork synthesis of all the things that made sense to me, so here are some tabs I had open that probably had something to do with it:</p>
+            <ul>
+                <li><a href="https://discourse.mcneel.com/t/how-to-use-brep-edges-as-voronoi-boundary/107941/8" target="_blank">Using brep edges as voronoi boundary discussion</a></li>
+                <li><a href="https://www.grasshopper3d.com/forum/topics/skeletal-mesh?id=2985220%3ATopic%3A557380&page=1#comments" target="_blank">Skeletal mesh discussion</a></li>
+                <li><a href="https://www.youtube.com/watch?v=YDFofhlWNxs&t=354s&ab_channel=RhinoGrasshopper" target="_blank">Voronoi surface tutorial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=kQJilP0r9-k&ab_channel=RhinoGrasshopper" target="_blank">Voronoi attractor tutorial</a></li>
+                <li><a href="https://www.3dwaves.net/products/sp404-stands" target="_blank">3DWaves 404 stand</a></li>
+                <li><a href="https://cremacaffe.shop/products/kolibri" target="_blank">CremaCaffe 404 stand</a></li>
+            </ul>
+            Also, as always, big hug for the Discord bbs. I didn't end up needing to act on the question I asked there, but Junchao and Andy stay coming through with helpful ideas and solutions, and it's much appreciated!
+        </section>
+    </body>
+</html>
